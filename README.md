@@ -216,6 +216,53 @@ results are reproducible rather than merely plausible.
 
 ---
 
+## Part 3 — Math scaffold → Python scaffold
+
+The content/scaffold split found in English definitions exists natively in
+math notation and in code syntax:
+
+| | Content | Scaffold |
+|---|---|---|
+| Math | operands: numbers, variables, named objects | operators/quantifiers: `+ - * / = < > in forall exists sum prod ->` |
+| Python | identifiers & literals | keywords/operators: `if for while return def = == and or in` |
+
+Because both domains encode the **same relational content**, a math
+scaffold can be rewritten directly into a Python scaffold while content
+(variable/function names, numbers) passes through unchanged — the same
+operation as `scaffold_transform.py`'s device rewrites, but cross-domain
+instead of cross-rhetoric. `math_to_python.py` implements 10 such
+transforms as regex-recognized patterns paired with code generators.
+
+```
+python math_to_python.py "forall x in S, x > 0"
+python math_to_python.py "sum_{i=1}^{n} a_i"
+python math_to_python.py "f(x) = x^2 + 1"
+python math_to_python.py --list
+```
+
+Verified outputs (deterministic, regex-matched — no LLM/heuristic guessing):
+
+| Math | Device | Python |
+|---|---|---|
+| `forall x in S, x > 0` | universal_quantifier | `all(x > 0 for x in S)` |
+| `exists x in S, x < 0` | existential_quantifier | `any(x < 0 for x in S)` |
+| `sum_{i=1}^{n} a_i` | summation | `sum(a[i] for i in range(1, n + 1))` |
+| `prod_{i=1}^{n} a_i` | product | `math.prod(a[i] for i in range(1, n + 1))` |
+| `f(x) = a if x > 0 otherwise b` | piecewise_function | `def f(x):\n    return a if x > 0 else b` |
+| `f(x) = x^2 + 1` | function_definition | `def f(x):\n    return x**2 + 1` |
+| `x > 0 -> y = 1` | implication | `if x > 0:\n    y = 1` |
+| `x := x + 1` | assignment | `x = x + 1` |
+| `{x \| x in S, x > 0}` | set_builder | `[x for x in S if x > 0]` |
+| `x in S` | set_membership | `x in S` |
+
+Pattern precedence matters here the same way it did for the English
+scaffold transforms: `piecewise_function` must be tried before the more
+general `function_definition`, or the `if/otherwise` clause gets swallowed
+whole into a literal (verified — `f(x) = a if x > 0 otherwise b` correctly
+routes to piecewise, not generic function definition).
+
+---
+
 ## License
 
 Dual-licensed: **free for noncommercial use** (personal projects, research,
