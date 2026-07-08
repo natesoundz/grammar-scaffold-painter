@@ -216,6 +216,17 @@ results are reproducible rather than merely plausible.
 
 ---
 
+## License
+
+Dual-licensed: **free for noncommercial use** (personal projects, research,
+education, hobby use — see `LICENSE`, PolyForm Noncommercial 1.0.0). Any
+**commercial use** — selling this software, offering it as a paid service,
+or incorporating it into a commercial product — requires a separate
+commercial license. Contact [natesoundz](https://github.com/natesoundz)
+to purchase one.
+
+---
+
 ## Known open problems (stated honestly)
 
 - Structural closure for a rich input can be large (1,600+ members on one
