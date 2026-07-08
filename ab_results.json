@@ -1,0 +1,86 @@
+{
+  "test_size": 10,
+  "with_rules": {
+    "matched": 10,
+    "time_sec": 0.5734007358551025,
+    "avg_conf": 0.8231999999999999,
+    "samples": [
+      {
+        "input": "How do I fix a broken engine?",
+        "matched": true,
+        "conf": 0.529,
+        "join": "condition_consequence",
+        "output": "If Take into account that claim: to ask for, or seek to obtain, by virtue of authority, right, or supposed right., then take into account that conduce: to lead or tend, esp, then take into account that connect: to join, or fasten together, as by something intervening, then take into account that crack: to crack glass; to crack nuts, then take into account that crush: to crush grapes, then take into account that draft: to draw the outline of."
+      },
+      {
+        "input": "Why does the bolt loosen over time?",
+        "matched": true,
+        "conf": 1.0,
+        "join": "cause_effect",
+        "output": "Bolt: a shaft or missile intended to be shot from a crossbow or catapult, esp Because of this, why: for what cause, reason, or purpose Because of this, does: the 3d pers Because of this, loosen: to make loose."
+      },
+      {
+        "input": "What should I do if the engine fails?",
+        "matched": true,
+        "conf": 0.529,
+        "join": "condition_consequence",
+        "output": "If Take into account that compromise: to bind by mutual agreement., then take into account that connect: to join, or fasten together, as by something intervening, then take into account that counterfeit: to counterfeit the voice of another person, then take into account that dispense: the steward dispenses provisions according directions; Nature dispenses her bounties; to dispense medicines, then take into account that document: to teach, then take into account that draft: to draw the outline of."
+      },
+      {
+        "input": "How can I tighten a loose bolt?",
+        "matched": true,
+        "conf": 1.0,
+        "join": "condition_consequence",
+        "output": "If Take into account that bolt: to shoot., then take into account that how: to what degree or extent, number or amount, then take into account that loose: to untie or unbind, then take into account that tighten: to draw tighter."
+      },
+      {
+        "input": "What causes metal to corrode?",
+        "matched": true,
+        "conf": 1.0,
+        "join": "cause_effect",
+        "output": "Metal: an elementary substance, as sodium, calcium, or copper, whose oxide or hydroxide has basic rather than acid properties, as contrasted with the nonmetals, or metalloids Because of this, corrode: to eat away by degrees."
+      }
+    ]
+  },
+  "without_rules": {
+    "matched": 0,
+    "time_sec": 0.11371994018554688,
+    "samples": [
+      {
+        "input": "How do I fix a broken engine?",
+        "matched": false,
+        "conf": 0.0,
+        "join": "condition_consequence",
+        "output": "If Take into account that claim: to ask for, or seek to obtain, by virtue of authority, right, or supposed right., then take into account that conduce: to lead or tend, esp, then take into account that connect: to join, or fasten together, as by something intervening, then take into account that crack: to crack glass; to crack nuts, then take into account that crush: to crush grapes, then take into account that draft: to draw the outline of."
+      },
+      {
+        "input": "Why does the bolt loosen over time?",
+        "matched": false,
+        "conf": 0.0,
+        "join": "cause_effect",
+        "output": "Bolt: a shaft or missile intended to be shot from a crossbow or catapult, esp Because of this, why: for what cause, reason, or purpose Because of this, does: the 3d pers Because of this, loosen: to make loose."
+      },
+      {
+        "input": "What should I do if the engine fails?",
+        "matched": false,
+        "conf": 0.0,
+        "join": "condition_consequence",
+        "output": "If Take into account that compromise: to bind by mutual agreement., then take into account that connect: to join, or fasten together, as by something intervening, then take into account that counterfeit: to counterfeit the voice of another person, then take into account that dispense: the steward dispenses provisions according directions; Nature dispenses her bounties; to dispense medicines, then take into account that document: to teach, then take into account that draft: to draw the outline of."
+      },
+      {
+        "input": "How can I tighten a loose bolt?",
+        "matched": false,
+        "conf": 0.0,
+        "join": "condition_consequence",
+        "output": "If Take into account that bolt: to shoot., then take into account that how: to what degree or extent, number or amount, then take into account that loose: to untie or unbind, then take into account that tighten: to draw tighter."
+      },
+      {
+        "input": "What causes metal to corrode?",
+        "matched": false,
+        "conf": 0.0,
+        "join": "cause_effect",
+        "output": "Metal: an elementary substance, as sodium, calcium, or copper, whose oxide or hydroxide has basic rather than acid properties, as contrasted with the nonmetals, or metalloids Because of this, corrode: to eat away by degrees."
+      }
+    ]
+  }
+}

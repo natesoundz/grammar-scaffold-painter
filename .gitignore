@@ -1,0 +1,20 @@
+__pycache__/
+*.pyc
+
+# Session/debug artifacts (large, regenerable, not needed to run or review the code)
+_session_*.ckpt.json
+_cycle_*.json
+*_chk.json
+listener_checkpoint.json
+instrumented_checkpoint.json
+test_checkpoint.json
+measure_chk.json
+ab_checkpoint.json
+
+# Uncompressed substrate (54MB) — substrate.min.bin is the one actually used at runtime
+substrate.bin
+
+# Large generated corpora / logs
+artifacts.jsonl
+multi_join.jsonl
+inputs.txt
